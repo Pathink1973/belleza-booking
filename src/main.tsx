@@ -4,7 +4,7 @@ import App from './App.tsx';
 import './i18n';
 import './index.css';
 
-if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker
       .register('/sw.js')
@@ -28,7 +28,25 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-createRoot(document.getElementById('root')!).render(
+if ('serviceWorker' in navigator && import.meta.env.DEV) {
+  void navigator.serviceWorker.getRegistrations().then((registrations) =>
+    Promise.all(registrations.map((registration) => registration.unregister()))
+  );
+
+  if ('caches' in window) {
+    void caches.keys().then((cacheNames) =>
+      Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName)))
+    );
+  }
+}
+
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+  throw new Error('Root element not found');
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <App />
   </StrictMode>
