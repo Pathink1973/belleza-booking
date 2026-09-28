@@ -11,8 +11,4 @@ export default defineConfig({
   resolve: {
     dedupe: ['react', 'react-dom', 'react/jsx-runtime'],
   },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'zustand', 'use-sync-external-store/shim/with-selector'],
-    exclude: ['lucide-react'],
-  },
 });

@@ -1,9 +1,7 @@
-const CACHE_NAME = 'belleza-v1';
-const RUNTIME_CACHE = 'belleza-runtime-v1';
+const CACHE_NAME = 'belleza-static-v2';
+const RUNTIME_CACHE = 'belleza-runtime-v2';
 
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
   '/manifest.json',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png'
@@ -39,7 +37,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  if (url.origin === location.origin) {
+  if (url.origin === location.origin && request.destination === 'document') {
+    event.respondWith(
+      fetch(request).catch(() => caches.match('/index.html'))
+    );
+    return;
+  }
+
+  if (
+    url.origin === location.origin &&
+    !url.pathname.startsWith('/src/') &&
+    !url.pathname.startsWith('/node_modules/') &&
+    !url.pathname.startsWith('/@')
+  ) {
     event.respondWith(
       caches.match(request).then((cachedResponse) => {
         if (cachedResponse) {
