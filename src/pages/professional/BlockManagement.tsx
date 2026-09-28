@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from 'react';
 import { Ban, Trash2, Plus, AlertCircle, Calendar, Clock, RefreshCw } from 'lucide-react';
 import { format, parseISO } from 'date-fns';

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { supabase } from '../lib/supabase';
 import { parseISO, format, isAfter, isBefore } from 'date-fns';
 

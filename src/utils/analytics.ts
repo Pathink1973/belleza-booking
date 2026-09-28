@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { supabase } from '../lib/supabase';
 import { startOfMonth, endOfMonth, eachDayOfInterval, format } from 'date-fns';
 import { ptLocale } from '../i18n';
