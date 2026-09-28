@@ -72,7 +72,7 @@ export function useServiceAvailabilityBadge(serviceId: string | null) {
   }, [serviceId]);
 
   useEffect(() => {
-    fetchAvailability Badge();
+    fetchAvailabilityBadge();
   }, [fetchAvailabilityBadge]);
 
   return {
