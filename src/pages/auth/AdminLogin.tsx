@@ -148,7 +148,7 @@ export function AdminLogin() {
                   <button
                     type="button"
                     className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-200 transition-colors"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowPassword(!showPassword)} aria-label={showPassword ? "Ocultar palavra-passe" : "Mostrar palavra-passe"}
                   >
                     {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                   </button>

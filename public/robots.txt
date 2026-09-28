@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://belleza-booking.lovable.app/sitemap.xml

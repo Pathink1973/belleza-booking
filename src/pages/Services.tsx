@@ -320,7 +320,7 @@ export function Services() {
             </div>
           )}
           <button
-            onClick={handleClosePopup}
+            onClick={handleClosePopup} aria-label="Fechar"
             className="absolute top-4 right-4 p-2.5 sm:p-4 min-h-[44px] min-w-[44px] sm:min-h-[56px] sm:min-w-[56px] bg-white rounded-full shadow-lg hover:bg-gray-100 active:scale-95 transition-all duration-200 z-10 touch-manipulation flex items-center justify-center"
           >
             <X className="h-5 w-5 sm:h-7 sm:w-7 text-gray-600" />
@@ -1020,7 +1020,7 @@ export function Services() {
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-bold text-gray-900">{t('services.manageService')}</h2>
                 <button
-                  onClick={() => setEditingService(null)}
+                  onClick={() => setEditingService(null)} aria-label="Fechar"
                   className="p-3 min-h-[48px] min-w-[48px] hover:bg-gray-100 rounded-full active:scale-90 transition-all duration-200 touch-manipulation flex items-center justify-center"
                 >
                   <X className="h-6 w-6 text-gray-600" />
