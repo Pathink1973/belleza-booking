@@ -27,6 +27,27 @@ export interface Profile {
   updated_at: string;
 }
 
+// Cria o perfil em falta (ex.: registo com confirmação de email, sem sessão no momento do registo)
+async function ensureProfile(authUser: any): Promise<any | null> {
+  const meta = authUser.user_metadata || {};
+  const role = meta.role === USER_ROLES.SUPER_ADMIN ? USER_ROLES.PROFESSIONAL : (meta.role || USER_ROLES.PROFESSIONAL);
+  const { data, error } = await supabase
+    .from('profiles')
+    .insert({
+      id: authUser.id,
+      full_name: meta.full_name || authUser.email?.split('@')[0] || 'Utilizador',
+      role,
+      mobile_number: meta.mobile_number || null
+    })
+    .select('*')
+    .maybeSingle();
+  if (error) {
+    console.error('Ensure profile error:', error);
+    return null;
+  }
+  return data;
+}
+
 export async function register(
   email: string,
   password: string,
@@ -110,7 +131,7 @@ export async function login(
       return { success: false, error: authError?.message || 'Falha ao fazer login' };
     }
 
-    const { data: profileData, error: profileError } = await supabase
+    let { data: profileData, error: profileError } = await supabase
       .from('profiles')
       .select('*')
       .eq('id', authData.user.id)
@@ -118,6 +139,10 @@ export async function login(
 
     if (profileError && profileError.code !== 'PGRST116') {
       console.error('Profile fetch error:', profileError);
+    }
+
+    if (!profileData && !profileError) {
+      profileData = await ensureProfile(authData.user);
     }
 
     const role = profileData?.role || authData.user.user_metadata?.role || USER_ROLES.PROFESSIONAL;
@@ -388,6 +413,10 @@ export async function getCurrentUser(): Promise<User | null> {
 
       profileData = data;
       break;
+    }
+
+    if (!profileData) {
+      profileData = await ensureProfile(authUser);
     }
 
     const role = profileData?.role || authUser.user_metadata?.role || USER_ROLES.PROFESSIONAL;
