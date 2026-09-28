@@ -1,4 +1,88 @@
+# Regras de rastreio — Belleza
+# Não é um mecanismo de segurança: as rotas privadas estão protegidas por autenticação.
+
 User-agent: *
 Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: GPTBot
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /auth/
+Disallow: /dashboard
+Disallow: /booking
+Disallow: /professional
+Disallow: /super-admin
+Disallow: /profile
+Disallow: /reviews
+Disallow: /notifications
+Disallow: /bookings
 
 Sitemap: https://belleza-booking.lovable.app/sitemap.xml

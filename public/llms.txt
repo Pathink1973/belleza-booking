@@ -1,0 +1,29 @@
+# Belleza
+
+> Plataforma online para agendamento de serviços de beleza e bem-estar em Portugal. Liga clientes a profissionais e estabelecimentos, e dá aos profissionais ferramentas de gestão do seu negócio.
+
+## Para quem
+- Clientes que procuram e reservam serviços de beleza e bem-estar.
+- Profissionais e estabelecimentos que querem gerir a agenda, os clientes e atrair novas marcações.
+
+## Funcionalidades
+- Catálogo de serviços por categoria, com detalhes de cada serviço.
+- Marcação online com calendário e disponibilidade em tempo real.
+- Gestão de agenda e disponibilidade para profissionais.
+- Base de clientes, análise de desempenho e notificações de marcações.
+- Avaliações de clientes.
+
+## Páginas públicas
+- [Início](https://belleza-booking.lovable.app/): apresentação da plataforma.
+- [Serviços](https://belleza-booking.lovable.app/services): catálogo de serviços disponíveis.
+- [Categorias](https://belleza-booking.lovable.app/categories): serviços organizados por categoria.
+- [Funcionalidades](https://belleza-booking.lovable.app/features): ferramentas para profissionais.
+- [Sobre](https://belleza-booking.lovable.app/about): missão e valores da Belleza.
+- [Ajuda](https://belleza-booking.lovable.app/help): perguntas frequentes e apoio.
+- [Contacto](https://belleza-booking.lovable.app/contact): formas de contacto e horário de atendimento.
+- [Termos](https://belleza-booking.lovable.app/terms): termos de utilização.
+- [Cookies](https://belleza-booking.lovable.app/cookies): política de cookies.
+
+## Contacto
+- Horário de atendimento: segunda a sexta, 09h00–18h00; sábado, 10h00–12h00; domingo encerrado.
+- Página de contacto: https://belleza-booking.lovable.app/contact
