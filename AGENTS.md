@@ -1,3 +1,3 @@
 # Project Architecture Rules
 
-- Register the service worker only in production and never cache Vite source or dependency-module URLs, because stale development modules can load multiple incompatible React runtimes.
+- No app-shell service worker: public/sw.js is a kill-switch that unregisters itself, because the old offline worker broke page loads (failed navigations, stale React modules).
